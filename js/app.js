@@ -1,4 +1,4 @@
-//  localStorage.clear();
+// localStorage.clear();
 
 //  localStorage.setItem("name", "Shakya");
 //  localStorage.setItem("city", "Colombo");
@@ -14,10 +14,22 @@
 
 // Object in localStorage
 
-let customer = {
+let customerList = [{
     name : "Shakya",
     age : 20,
     isMarried : false,
-}
+},{
+    name : "Hirun Thejan",
+    age : 28,
+    isMarried : true,
+}]
 
-localStorage.setItem("customer", customer);
+//  localStorage.setItem("customer", customer);
+
+let stringCustomer = JSON.stringify(customerList);
+localStorage.setItem("customer", stringCustomer);
+
+let getcustomer = localStorage.getItem("customer");
+
+let objectCustomer = JSON.parse(getcustomer);
+console.log(objectCustomer);
